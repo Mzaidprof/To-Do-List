@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    background: linear-gradient(135deg, #153677, #4e085f);
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.todo {
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 40px 30px 70px;
+    margin: 100px auto 40px;
+}
+
+.todo h2 {
+    transition: 0.2s;
+    color: #002765;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.todo h2:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    text-shadow: -1px 2px 3px black;
+}
+.todo h2 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button {
+    transition: 0.2s ease-out;
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: rgb(255, 153, 0);
+    color: white;
+    font-weight: bolder;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+button:hover, button:active {
+    transition: 0.3s ease-in;
+    transform: scale(0.95);
+    text-shadow: 0 0 2px whitesmoke,0 0 4px rgb(255, 238, 187),0 0 6px rgb(255, 222, 34);
+    background-color: rgb(0, 0, 0);
+}
+
+ul li {
+    transition: 0.2s ease-in;
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 17px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+ul li:hover , li:active, li:focus{
+    color: whitesmoke;
+    transition: 0.3s ease-out;
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 17px;
+    position: relative;
+    background-color: rgb(255, 153, 0);
+    border-radius: 50px;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    background-image: url(images/unchecked.png);
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    transition: 0.2s;
+    color: #555;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    transition: 0.2s;
+    color: white;
+    text-shadow: 0 0 3px rgb(255, 222, 222), 0 0 5px rgb(250, 250, 250);
+}
+
+@media only screen and (max-width: 600px) and (min-width: 363px) {
+    .todo {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .todo h2{
+        width: auto;
+    }
+    
+    .row {
+        padding-left: 10px;
+    }
+
+    input {
+        padding: 8px;
+    }
+
+    button {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 362px){
+    input{
+        display: block;
+        transform: scale(0.65);
+    }
+
+    button {
+        position: absolute;
+        transform: scale(0.45);
+        left: 150px;
+    }
+}
